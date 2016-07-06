@@ -30,7 +30,6 @@ import de.fhdw.ergoholics.brainphaser.logic.UserManager;
  * been launched before.
  */
 public class MainActivity extends BrainPhaserActivity {
-    public static String EXTRA_NAVIGATE_TO = "NAVIGATE_TO";
     public static String EXTRA_SHOW_LOGGEDIN_SNACKBAR = "SHOW_SNACKBAR";
     private final static int CODE_FILEPICKER = 0;
 
@@ -144,7 +143,6 @@ public class MainActivity extends BrainPhaserActivity {
         // If EXTRA_SHOW_LOGGEDIN_SNACKBAR is passed,
         // show a little snackbar that shows the currently logged in user's name
         if (intent.getBooleanExtra(EXTRA_SHOW_LOGGEDIN_SNACKBAR, false)) {
-            BrainPhaserApplication app = (BrainPhaserApplication) getApplication();
             View rootView = findViewById(R.id.main_content);
             String text = String.format(getResources().getString(R.string.logged_in_as), mUserManager.getCurrentUser().getName());
             final Snackbar snackbar = Snackbar
